@@ -1,1 +1,28 @@
+//select top 5 salary paid employees.
+select * from employees ORDER BY salary limit 5;
+//select top3 experienced emplyees
+select * from employees ORDER BY experience limit 3;
+//Display top 2 salaries from Finance department.
+select * from employees where department='Finance'  ORDER BY salary limit 2;
+//Display top 4 employees from Hyderabad.
+select * from employees where city='Hyderabad' limit 4;
 
+//DISTINICT
+select DISTINCT department from employees;
+
+select DISTINCT city from employees;
+
+select DISTINCT salary from employees;
+
+select DISTINCT department,city from employees;
+
+//COMPARISON OPERATORS
+select * from employees where salary>=80000;
+select * from employees where experience>=3;
+select * from employees where salary<50000;
+
+//LOGICAL OPERATORS
+ select * from employees where  department='IT' and salary<75000;
+select * from employees where  city='Hyderabad' or  city='Bangalore';
+select * from employees where  department='HR' and  experience<3;
+select * from employees where salary>60000 or experience>6;
