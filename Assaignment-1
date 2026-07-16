@@ -26,3 +26,23 @@ select * from employees where salary<50000;
 select * from employees where  city='Hyderabad' or  city='Bangalore';
 select * from employees where  department='HR' and  experience<3;
 select * from employees where salary>60000 or experience>6;
+
+//IN AND NOT IN
+select * from Employees where city in ('Hyderabad','Mumbai');
+select * from Employees where department in ('IT','Finance');
+select * from Employees where department not in ('IT','Finance');
+select * from Employees where city not in ('Pune','Mumbai');
+
+//BETWEEN
+select * from Employees where salary between 50000 and 80000;
+select * from Employees where experience between 3 and 6;
+  select * from Employees where emp_id between 105 and 112;
+select * from Employees where salary not between 40000 and 80000;
+
+//LIKE OPERATOR
+select * from Employees where emp_name like'R%';
+select * from Employees where emp_name like'%a';
+select * from Employees where emp_name like'%v%';
+select * from Employees where city like'B%';
+
+
