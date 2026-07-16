@@ -1,1 +1,49 @@
+INNER JOIN
+============
+
+select e.EmployeeName,d.DepartmentName from Employees e 
+inner join
+Departments d
+on e.DepartmentID=d.DepartmentID;
+
+
+select p.ProjectName,d.DepartmentName from Projects p 
+inner join
+Departments d
+on p.DepartmentID=d.DepartmentID;
+
+
+select e.EmployeeName,p.ProjectName from Employees e 
+inner join
+Projects p
+on e.DepartmentID=p.DepartmentID;
+
+
+select e.EmployeeName from Employees e 
+inner join
+Projects p
+on e.DepartmentID=p.DepartmentID;
+
+
+select e.Salary,d.Location from Employees e 
+inner join
+Departments d
+on e.DepartmentID=d.DepartmentID;
+
+
+select e.EmployeeName,d.DepartmentName from Employees e 
+inner join
+Departments d
+on e.DepartmentID=d.DepartmentID
+where DepartmentName='IT';
+
+select d.DepartmentName,avg(e.Salary) from Employees e 
+inner join
+Departments d
+on e.DepartmentID=d.DepartmentID
+group by DepartmentName;
+
+
+LEFT JOIN
+===========
 
