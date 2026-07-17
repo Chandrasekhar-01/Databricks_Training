@@ -46,4 +46,47 @@ group by DepartmentName;
 
 LEFT JOIN
 ===========
+select  e.EmployeeName,d.DepartmentName from Employees e
+left join Departments d
+on e.DepartmentID=d.DepartmentID
+where D.DepartmentID is null;
+
+select  e.EmployeeName,p.ProjectName from Employees e
+left join Projects p
+on e.DepartmentID=p.DepartmentID
+where p.DepartmentID is null;
+
+SELECT d.DepartmentID,
+       d.DepartmentName,  
+       COUNT(e.EmployeeID) AS TotalEmployees
+FROM Departments d
+LEFT JOIN Employees e
+ON d.DepartmentID = e.DepartmentID
+GROUP BY d.DepartmentID, d.DepartmentName;
+
+EXPERT LEVEL CHALLENGES
+===========================
+SELECT d.DepartmentName,max(p.Budget)
+FROM Departments d
+join Projects p
+ON d.DepartmentID = p.DepartmentID;
+
+SELECT e.EmployeeName
+FROM Employees e
+left join Projects p
+ON e.DepartmentID = p.DepartmentID
+where p.DepartmentID is null;
+
+SELECT p.ProjectName,
+       COUNT(e.EmployeeID) AS members
+FROM EmployeeProjects e
+JOIN Projects p
+ON e.ProjectID = p.ProjectID
+GROUP BY e.ProjectID, p.ProjectName
+HAVING COUNT(e.EmployeeID) > 1;
+
+
+
+
+
 
